@@ -15,7 +15,7 @@ var questions = [{
   answer: "3"
 },
 {
-  question: "WHat is the name of the sword Jon Snow wields ? ",
+  question: "What is the name of the sword Jon Snow wields ? ",
   answer: "Longclaw"
 },
 {
@@ -25,6 +25,10 @@ var questions = [{
 {
   question: "What does Arya name her direwolf ? ",
   answer: "Nymeria"
+},
+{
+  question: "what was Hodor called before he got his tragic door-holding nickname ? ",
+  answer: "Wylis"
 }];
 function welcome() {
  var userName = readlineSync.question("What is your name? ");
