@@ -57,6 +57,12 @@ function showScores() {
   console.log("Final Score: ", score);
   console.log("These are the high score till now!");
   highScores.map(score => console.log(score.name, " : ", score.score))
+  for(var i=0; i<highScores.length; i++) {
+    if(score>highScores[i].score) {
+      console.log("Looks like you've got a highscore! Congrats! Send me the screenshot so I can update your name and score.");
+      break;
+    }
+  }
 }
 welcome();
 game();
