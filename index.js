@@ -1,8 +1,8 @@
 var readlineSync = require("readline-sync");
 var highScores = [
   {
-    name: "Manan",
-    score: 3,
+    name: "Dhruvin",
+    score: 10,
   },
   {
     name: "Vivek",
@@ -47,6 +47,8 @@ var questionsLvl2 = [{
   question: "Jamie Lannister has a golden ___. ? ",
   answer: "Hand"
 },];
+var bonusQuestion = "Which of the following is not a name of one of Daenerys Targaryen’s dragons?";
+var bonusAnswerList = ["Rhaegal", "Drogon", "Balerion", "Viserion"];
 function welcome() {
  var userName = readlineSync.question("What is your name? ");
  console.log("Welcome "+ userName + " to the Game of Thrones Quiz");
@@ -76,6 +78,16 @@ function game() {
       var currentQuestion = questionsLvl2[i];
       play(currentQuestion.question, currentQuestion.answer);
     }
+  }
+  console.log("Here's a bonus question");
+  console.log("");
+  var index = readlineSync.keyInSelect(bonusAnswerList, bonusQuestion);
+  if(index==2) {
+    console.log("Correct!");
+    score = score + 1;
+  } else {
+    console.log("Score : ", score);
+    console.log("_______________")
   }
 }
 function showScores() {
